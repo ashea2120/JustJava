@@ -17,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void submitOrder(View view) {
-        //display(numOfCoffees);
-        displayPrice(numOfCoffees*5);
+        String message = "Total = " + numOfCoffees*5;
+        displayMessage(message);
     }
 
     private void display(int number) {
@@ -39,5 +39,10 @@ public class MainActivity extends AppCompatActivity {
     public void subtractFromOrder(View view) {
         numOfCoffees--;
         display(numOfCoffees);
+    }
+
+    private void displayMessage(String message) {
+        TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
+        priceTextView.setText(message);
     }
 }
